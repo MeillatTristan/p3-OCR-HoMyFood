@@ -52,6 +52,10 @@
     display: flex;
     justify-content: space-between;
 
+    @media screen and (min-width: 992px) {
+      font-size: 3rem;
+    }
+
     span{
       font-family: 'Shrikhand', cursive;
       font-weight: 500;
@@ -70,6 +74,10 @@
     overflow: hidden;
     width: 100%;
     margin-top: 15px;
+    position: relative;
+    opacity: 0;
+    @include animation-fadin-iteration;
+    transition: 0.3s;
 
     @media screen and (min-width: 768px) {
         width: 48%;
@@ -80,6 +88,7 @@
   }
 
     &:hover{
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -2px;
       .card__visible{
         width: 80%;
 
@@ -135,6 +144,11 @@
       font-size: 1.3rem;
       font-weight: 400;
       margin-top: 5px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      max-width: 100%;
+      margin-right: 5px;
 
       @media screen and (min-width: 768px) {
         margin-top: 15px;

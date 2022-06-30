@@ -6,9 +6,20 @@
   &__list{
     counter-reset: list;
 
+    @media screen and (min-width: 992px) {
+      display: flex;
+      justify-content: space-between;
+      padding: 25px;
+    }
+
     .item{
       counter-increment: list;
       position: relative;
+      height: max-content;
+
+      @media screen and (min-width: 992px) {
+        width: 30%;
+      }
 
       &::before{
         content: counter(list);
@@ -35,6 +46,10 @@
         padding: 18px 25px;
         border-radius: 15px;
         @include box-shadow;
+
+        @media screen and (min-width: 992px) {
+          margin: 0 0 0 20px;
+        }
 
         &:hover{
           background-color: $primary-color-10;

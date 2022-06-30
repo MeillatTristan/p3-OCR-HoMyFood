@@ -57,3 +57,12 @@
     }
   }
 }
+
+@mixin animation-fadin-iteration{
+  @for $i from 1 through 25 {
+    &:nth-child(#{$i}) {
+    animation: fadein 2s forwards, translateY 1s forwards;
+    animation-delay: #{$i *0.2}s
+    }
+  }
+}

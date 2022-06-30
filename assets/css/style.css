@@ -26,6 +26,60 @@ img {
   height: auto;
 }
 
+@keyframes bounce-b635cd47-021f-4f42-81db-82645a2ebb63 {
+  0% {
+    animation-timing-function: cubic-bezier(0.1361, 0.2514, 0.2175, 0.8786);
+    transform: translate(0, 0px) scaleY(1);
+  }
+  37% {
+    animation-timing-function: cubic-bezier(0.7674, 0.1844, 0.8382, 0.7157);
+    transform: translate(0, -39.96px) scaleY(1);
+  }
+  72% {
+    animation-timing-function: cubic-bezier(0.1118, 0.2149, 0.2172, 0.941);
+    transform: translate(0, 0px) scaleY(1);
+  }
+  87% {
+    animation-timing-function: cubic-bezier(0.7494, 0.2259, 0.8209, 0.6963);
+    transform: translate(0, 19.9px) scaleY(0.602);
+  }
+  100% {
+    transform: translate(0, 0px) scaleY(1);
+  }
+}
+@keyframes secondes {
+  0% {
+    opacity: 1;
+    left: 0;
+  }
+  85% {
+    opacity: 1;
+    left: 0%;
+  }
+  100% {
+    opacity: 0;
+    left: 100%;
+  }
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes translateY {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
 .cta {
   color: white;
   padding: 15px 20px;
@@ -43,6 +97,20 @@ img {
 .cta:hover {
   background-position: 100% 0;
   transition: all 0.4s ease-in-out;
+}
+
+.loader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F6F6F6;
+  z-index: 2;
+  animation: secondes 2s forwards;
 }
 
 .header__container {
@@ -107,6 +175,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
   padding: 50px 20px;
   background-color: #F6F6F6;
 }
@@ -131,9 +200,22 @@ img {
 .usage__list {
   counter-reset: list;
 }
+@media screen and (min-width: 992px) {
+  .usage__list {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+  }
+}
 .usage__list .item {
   counter-increment: list;
   position: relative;
+  height: max-content;
+}
+@media screen and (min-width: 992px) {
+  .usage__list .item {
+    width: 30%;
+  }
 }
 .usage__list .item::before {
   content: counter(list);
@@ -161,6 +243,11 @@ img {
   padding: 18px 25px;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+@media screen and (min-width: 992px) {
+  .usage__list .item .card {
+    margin: 0 0 0 20px;
+  }
 }
 .usage__list .item .card:hover {
   background-color: #F5EDFF;
@@ -196,6 +283,11 @@ img {
   justify-content: space-around;
   gap: 20px;
 }
+@media screen and (min-width: 768px) {
+  .restau__containerCards {
+    justify-content: space-between;
+  }
+}
 .restau__containerCards .card {
   width: 300px;
   border-radius: 15px;
@@ -203,6 +295,16 @@ img {
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   transition: 0.3s;
+}
+@media screen and (min-width: 768px) {
+  .restau__containerCards .card {
+    width: 48%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .restau__containerCards .card {
+    width: 30%;
+  }
 }
 .restau__containerCards .card:hover {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -2px;
@@ -232,6 +334,7 @@ img {
   padding: 10px 15px;
   display: flex;
   justify-content: space-between;
+  color: black;
 }
 .restau__containerCards .card__containerText .title {
   font-size: 1.7rem;
@@ -329,6 +432,11 @@ img {
   display: flex;
   justify-content: space-between;
 }
+@media screen and (min-width: 992px) {
+  .menu__title {
+    font-size: 3rem;
+  }
+}
 .menu__title span {
   font-family: "Shrikhand", cursive;
   font-weight: 500;
@@ -378,6 +486,109 @@ img {
   overflow: hidden;
   width: 100%;
   margin-top: 15px;
+  position: relative;
+  opacity: 0;
+  transition: 0.3s;
+}
+.menu .card:nth-child(1) {
+  animation: fadein 2s forwards, translateY 1s forwards;
+  animation-delay: 0.2s;
+}
+.menu .card:nth-child(2) {
+  animation: fadein 2s forwards, translateY 1s forwards;
+  animation-delay: 0.4s;
+}
+.menu .card:nth-child(3) {
+  animation: fadein 2s forwards, translateY 1s forwards;
+  animation-delay: 0.6s;
+}
+.menu .card:nth-child(4) {
+  animation: fadein 2s forwards, translateY 1s forwards;
+  animation-delay: 0.8s;
+}
+.menu .card:nth-child(5) {
+  animation: fadein 2s forwards, translateY 1s forwards;
+  animation-delay: 1s;
+}
+.menu .card:nth-child(6) {
+  animation: fadein 2s forwards, translateY 1s forwards;
+  animation-delay: 1.2s;
+}
+.menu .card:nth-child(7) {
+  animation: fadein 2s forwards, translateY 1s forwards;
+  animation-delay: 1.4s;
+}
+.menu .card:nth-child(8) {
+  animation: fadein 2s forwards, translateY 1s forwards;
+  animation-delay: 1.6s;
+}
+.menu .card:nth-child(9) {
+  animation: fadein 2s forwards, translateY 1s forwards;
+  animation-delay: 1.8s;
+}
+.menu .card:nth-child(10) {
+  animation: fadein 2s forwards, translateY 1s forwards;
+  animation-delay: 2s;
+}
+.menu .card:nth-child(11) {
+  animation: fadein 2s forwards, translateY 1s forwards;
+  animation-delay: 2.2s;
+}
+.menu .card:nth-child(12) {
+  animation: fadein 2s forwards, translateY 1s forwards;
+  animation-delay: 2.4s;
+}
+.menu .card:nth-child(13) {
+  animation: fadein 2s forwards, translateY 1s forwards;
+  animation-delay: 2.6s;
+}
+.menu .card:nth-child(14) {
+  animation: fadein 2s forwards, translateY 1s forwards;
+  animation-delay: 2.8s;
+}
+.menu .card:nth-child(15) {
+  animation: fadein 2s forwards, translateY 1s forwards;
+  animation-delay: 3s;
+}
+.menu .card:nth-child(16) {
+  animation: fadein 2s forwards, translateY 1s forwards;
+  animation-delay: 3.2s;
+}
+.menu .card:nth-child(17) {
+  animation: fadein 2s forwards, translateY 1s forwards;
+  animation-delay: 3.4s;
+}
+.menu .card:nth-child(18) {
+  animation: fadein 2s forwards, translateY 1s forwards;
+  animation-delay: 3.6s;
+}
+.menu .card:nth-child(19) {
+  animation: fadein 2s forwards, translateY 1s forwards;
+  animation-delay: 3.8s;
+}
+.menu .card:nth-child(20) {
+  animation: fadein 2s forwards, translateY 1s forwards;
+  animation-delay: 4s;
+}
+.menu .card:nth-child(21) {
+  animation: fadein 2s forwards, translateY 1s forwards;
+  animation-delay: 4.2s;
+}
+.menu .card:nth-child(22) {
+  animation: fadein 2s forwards, translateY 1s forwards;
+  animation-delay: 4.4s;
+}
+.menu .card:nth-child(23) {
+  animation: fadein 2s forwards, translateY 1s forwards;
+  animation-delay: 4.6s;
+}
+.menu .card:nth-child(24) {
+  animation: fadein 2s forwards, translateY 1s forwards;
+  animation-delay: 4.8s;
+}
+.menu .card:nth-child(25) {
+  animation: fadein 2s forwards, translateY 1s forwards;
+  animation-delay: 5s;
 }
 @media screen and (min-width: 768px) {
   .menu .card {
@@ -388,6 +599,9 @@ img {
   .menu .card {
     width: 32%;
   }
+}
+.menu .card:hover {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -2px;
 }
 .menu .card:hover .card__visible {
   width: 80%;
@@ -440,6 +654,11 @@ img {
   font-size: 1.3rem;
   font-weight: 400;
   margin-top: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  margin-right: 5px;
 }
 @media screen and (min-width: 768px) {
   .menu .card__description {
