@@ -112,6 +112,17 @@ img {
   z-index: 2;
   animation: secondes 2s forwards;
 }
+.loader .mobile {
+  display: none !important;
+}
+@media screen and (max-width: 520px) {
+  .loader .mobile {
+    display: block !important;
+  }
+  .loader .desktop {
+    display: none !important;
+  }
+}
 
 .header__container {
   display: flex;
