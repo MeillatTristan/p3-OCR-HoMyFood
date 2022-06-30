@@ -1,0 +1,65 @@
+.usage{
+  &__container{
+    margin: 50px 0;
+    padding: 0 10px;
+  }
+  &__list{
+    counter-reset: list;
+
+    .item{
+      counter-increment: list;
+      position: relative;
+
+      &::before{
+        content: counter(list);
+        position: absolute;
+        left: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: $primary-color;
+        color: white;
+        font-weight: bold;
+        font-size: 1.5rem;
+        width: 25px;
+        height: 25px;
+        border-radius: 100%;
+        @include flex-center;
+      }
+
+      .card{
+        display: flex;
+        font-size: 1.5rem;
+        align-items: center;
+        margin: 25px 10px 0 20px;
+        background-color: #F6F6F6;
+        padding: 18px 25px;
+        border-radius: 15px;
+        @include box-shadow;
+
+        &:hover{
+          background-color: $primary-color-10;
+          transition: 0.3s;
+
+          .fa-solid{
+            color: $primary-color;
+          }
+        }
+    
+        .fa-solid{
+          font-size: 2rem;
+          margin-right: 15px;
+          width: 30px;
+          height: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: 0.3s;
+        }
+    
+        .description{
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

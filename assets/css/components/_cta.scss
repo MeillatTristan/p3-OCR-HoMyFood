@@ -1,0 +1,21 @@
+.cta{
+  color: white;
+  padding: 15px 20px;
+
+  border-radius: 36px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  transition: all .4s ease-in-out;
+
+  &.-primary{
+    background: rgb(255,121,218);
+    background-size: 300% 100%;
+    box-shadow: 0 4px 15px 0 rgba(147,86,220,0.75);
+    @include linear-gradient-primary;
+  }
+  
+  &:hover{
+    background-position: 100% 0;
+    transition: all .4s ease-in-out;
+  }
+}

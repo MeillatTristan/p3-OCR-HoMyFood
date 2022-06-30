@@ -1,0 +1,501 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+h2 {
+  font-size: 2.3rem;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.cta {
+  color: white;
+  padding: 15px 20px;
+  border-radius: 36px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  transition: all 0.4s ease-in-out;
+}
+.cta.-primary {
+  background: rgb(255, 121, 218);
+  background-size: 300% 100%;
+  box-shadow: 0 4px 15px 0 rgba(147, 86, 220, 0.75);
+  background-image: linear-gradient(to right, rgb(255, 121, 218), rgb(147, 86, 220), rgb(255, 148, 225), rgb(147, 86, 220));
+}
+.cta:hover {
+  background-position: 100% 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.header__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header__background {
+  position: relative;
+  z-index: 0;
+}
+@media screen and (min-width: 992px) {
+  .header__background {
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.header__containerImg {
+  padding: 20px 0;
+  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+.header__containerImg .logo {
+  width: 200px;
+  height: auto;
+}
+.header__containerImg .absolute {
+  position: absolute;
+  left: 5%;
+  bottom: 50%;
+  transform: translateY(50%);
+  font-size: 2rem;
+  color: black;
+  transition: 0.2s;
+}
+.header__containerImg .absolute:hover {
+  font-size: 2.2rem;
+}
+.header__location {
+  display: flex;
+  font-size: 1.7rem;
+  font-weight: 500;
+  background-color: #EAEAEA;
+  width: 100%;
+  justify-content: center;
+  padding: 15px 0;
+  color: #353535;
+  position: relative;
+  z-index: 0;
+}
+.header__location .fa-solid {
+  margin-right: 15px;
+}
+.header__blockCta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+  background-color: #F6F6F6;
+}
+.header__blockCta .title {
+  text-align: center;
+  font-size: 2.5rem;
+}
+.header__blockCta .description {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-top: 20px;
+  font-weight: 200;
+}
+.header__blockCta .cta {
+  margin-top: 30px;
+}
+
+.usage__container {
+  margin: 50px 0;
+  padding: 0 10px;
+}
+.usage__list {
+  counter-reset: list;
+}
+.usage__list .item {
+  counter-increment: list;
+  position: relative;
+}
+.usage__list .item::before {
+  content: counter(list);
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #9356dc;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.usage__list .item .card {
+  display: flex;
+  font-size: 1.5rem;
+  align-items: center;
+  margin: 25px 10px 0 20px;
+  background-color: #F6F6F6;
+  padding: 18px 25px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+.usage__list .item .card:hover {
+  background-color: #F5EDFF;
+  transition: 0.3s;
+}
+.usage__list .item .card:hover .fa-solid {
+  color: #9356dc;
+}
+.usage__list .item .card .fa-solid {
+  font-size: 2rem;
+  margin-right: 15px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+.usage__list .item .card .description {
+  font-weight: 500;
+}
+
+.restau__container {
+  background-color: #F6F6F6;
+  padding: 50px 15px;
+}
+.restau__title {
+  margin-bottom: 20px;
+}
+.restau__containerCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+.restau__containerCards .card {
+  width: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  transition: 0.3s;
+}
+.restau__containerCards .card:hover {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -2px;
+}
+.restau__containerCards .card__new {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 15px;
+  background-color: #99E2D0;
+  color: #1a8a68;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 2px;
+}
+.restau__containerCards .card__containerImg {
+  width: 100%;
+  height: 200px;
+}
+.restau__containerCards .card__containerImg .illu {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.restau__containerCards .card__containerText {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.restau__containerCards .card__containerText .title {
+  font-size: 1.7rem;
+}
+.restau__containerCards .card__containerText .description {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-top: 5px;
+}
+.restau__containerCards .card .heart {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: flex;
+}
+.restau__containerCards .card .heart:hover .fa-regular {
+  transform: scale(0);
+  transition: 0.3s;
+}
+.restau__containerCards .card .heart .fa-heart {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 0;
+}
+.restau__containerCards .card .heart .fa-heart .fa-regular {
+  transition: 0.3s;
+}
+.restau__containerCards .card .heart .fa-heart.fa-solid {
+  color: transparent;
+  background-color: transparent;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.restau__containerCards .card .heart .fa-heart.fa-solid:hover {
+  background-image: linear-gradient(to right, rgb(255, 121, 218), rgb(147, 86, 220), rgb(255, 148, 225), rgb(147, 86, 220));
+  opacity: 1;
+  transform: scale(1.3);
+  background-clip: text;
+  background-size: 300% 100%;
+  transition: all 0.3s;
+}
+
+.menu {
+  background-color: #F6F6F6;
+  padding: 20px 10px;
+  border-radius: 25px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 1;
+}
+@media screen and (min-width: 768px) {
+  .menu {
+    padding: 40px 50px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .menu__containerCards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+}
+.menu__containerCta {
+  width: 100%;
+  margin: 25px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu h2.menu__title {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  position: relative;
+  width: max-content;
+  margin-top: 40px;
+}
+.menu h2.menu__title::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 50%;
+  left: 0;
+  bottom: -5px;
+  background-color: #99E2D0;
+}
+.menu__title {
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.menu__title span {
+  font-family: "Shrikhand", cursive;
+  font-weight: 500;
+}
+.menu__title .heart {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: flex;
+}
+.menu__title .heart:hover .fa-regular {
+  transform: scale(0);
+  transition: 0.3s;
+}
+.menu__title .heart .fa-heart {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 0;
+}
+.menu__title .heart .fa-heart .fa-regular {
+  transition: 0.3s;
+}
+.menu__title .heart .fa-heart.fa-solid {
+  color: transparent;
+  background-color: transparent;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.menu__title .heart .fa-heart.fa-solid:hover {
+  background-image: linear-gradient(to right, rgb(255, 121, 218), rgb(147, 86, 220), rgb(255, 148, 225), rgb(147, 86, 220));
+  opacity: 1;
+  transform: scale(1.3);
+  background-clip: text;
+  background-size: 300% 100%;
+  transition: all 0.3s;
+}
+.menu .card {
+  display: flex;
+  background-color: white;
+  color: black;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 15px;
+}
+@media screen and (min-width: 768px) {
+  .menu .card {
+    width: 48%;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .menu .card {
+    width: 32%;
+  }
+}
+.menu .card:hover .card__visible {
+  width: 80%;
+}
+@media screen and (min-width: 992px) {
+  .menu .card:hover .card__visible {
+    width: 85%;
+  }
+}
+.menu .card:hover .card__checked {
+  width: 20%;
+}
+@media screen and (min-width: 992px) {
+  .menu .card:hover .card__checked {
+    width: 15%;
+  }
+}
+.menu .card:hover .card__checked i {
+  transform: rotate(360deg);
+}
+.menu .card__visible {
+  width: 100%;
+  padding: 10px;
+  height: max-content;
+  display: flex;
+  justify-content: space-between;
+  transition: 0.3s;
+}
+@media screen and (min-width: 768px) {
+  .menu .card__visible {
+    padding: 20px;
+  }
+}
+.menu .card__left {
+  max-width: 90%;
+}
+.menu .card__right {
+  display: flex;
+  align-items: flex-end;
+}
+.menu .card__title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.menu .card__description {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-top: 5px;
+}
+@media screen and (min-width: 768px) {
+  .menu .card__description {
+    margin-top: 15px;
+  }
+}
+.menu .card__price {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-right: 10px;
+}
+.menu .card__checked {
+  width: 0%;
+  overflow: hidden;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  background-color: #99E2D0;
+  color: white;
+}
+.menu .card__checked i {
+  transition: 0.3s;
+}
+
+.footer__container {
+  background-color: #353535;
+  color: white;
+  padding: 15px;
+}
+.footer__col {
+  width: 200px;
+}
+.footer__col .logo {
+  filter: invert(96%) sepia(100%) saturate(12%) hue-rotate(237deg) brightness(103%) contrast(103%);
+  width: 60%;
+  margin: 10px 0;
+}
+.footer__col .link {
+  color: white;
+  font-size: 1.6rem;
+  display: flex;
+  margin-top: 10px;
+  font-weight: 300;
+}
+.footer__col .link.-strong {
+  font-weight: 500;
+}
+.footer__col .link .fa-solid {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*# sourceMappingURL=style.css.map */

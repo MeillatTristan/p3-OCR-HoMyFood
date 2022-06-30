@@ -1,0 +1,164 @@
+.menu{
+  background-color: $grey-10;
+  padding: 20px 10px;
+  border-radius: 25px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 1;
+
+  @media screen and (min-width: 768px) {
+    padding: 40px 50px;
+  }
+
+  &__containerCards{
+    @media screen and (min-width: 768px) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+    }
+  }
+
+  &__containerCta{
+    width: 100%;
+    margin: 25px 0;
+    @include flex-center
+  }
+
+  h2{
+    &.menu__title{
+      font-size: 1.5rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      position: relative;
+      width: max-content;
+      margin-top: 40px;
+  
+      &::after{
+        content: "";
+        position: absolute;
+        height: 3px;
+        width: 50%;
+        left: 0;
+        bottom: -5px;
+        background-color: $tertiary-color;
+      }
+    }
+  }
+
+  &__title{
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+
+    span{
+      font-family: 'Shrikhand', cursive;
+      font-weight: 500;
+    }
+
+    @include heart-animation
+  }
+
+
+  .card{
+    display: flex;
+    background-color: white;
+    color: black;
+    @include box-shadow;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 15px;
+
+    @media screen and (min-width: 768px) {
+        width: 48%;
+    }
+
+    @media screen and (min-width: 1400px) {
+      width: 32%;
+  }
+
+    &:hover{
+      .card__visible{
+        width: 80%;
+
+        @media screen and (min-width: 992px) {
+          width: 85%;
+        }
+      }
+
+      & .card__checked{
+        width: 20%;
+
+        @media screen and (min-width: 992px) {
+          width: 15%;
+        }
+        i{
+          transform: rotate(360deg);
+        }
+      }
+    }
+
+    &__visible{
+      width: 100%;
+      padding: 10px;
+      height: max-content;
+      display: flex;
+      justify-content: space-between;
+      transition: 0.3s;
+
+      @media screen and (min-width: 768px) {
+        padding: 20px;
+      }
+    }
+
+    &__left{
+      max-width: 90%;
+    }
+
+    &__right{
+      display: flex;
+      align-items: flex-end;
+    }
+
+    &__title{
+      font-size: 1.6rem;
+      font-weight: 600;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+
+    &__description{
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-top: 5px;
+
+      @media screen and (min-width: 768px) {
+        margin-top: 15px;
+      }
+    }
+
+    &__price{
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-right: 10px;
+    }
+
+    &__checked{
+      width: 0%;
+      overflow: hidden;
+      transition: 0.3s;
+      @include flex-center;
+      font-size: 2rem;
+      background-color: $tertiary-color;
+      color: white;
+
+      i{
+        transition: 0.3s;
+      }
+    }
+  }
+}
